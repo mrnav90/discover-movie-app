@@ -1,0 +1,23 @@
+{
+  "presets": ["react-native"],
+  "plugins": [
+    "transform-async-to-generator",
+    "transform-decorators-legacy",
+    "transform-react-jsx",
+    "transform-class-properties",
+    ["module-resolver", {
+      "root": ["./app"],
+      "alias": {
+        "actions": "./actions",
+        "api": "./api",
+        "components": "./components",
+        "config": "./config",
+        "constants": "./constants",
+        "reducers": "./reducers",
+        "screens": "./screens",
+        "styles": "./styles",
+        "utils": "./utils"
+      }
+    }]
+  ]
+}
