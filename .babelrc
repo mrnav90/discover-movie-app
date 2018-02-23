@@ -8,15 +8,15 @@
     ["module-resolver", {
       "root": ["./app"],
       "alias": {
-        "actions": "./actions",
-        "api": "./api",
-        "components": "./components",
-        "config": "./config",
-        "constants": "./constants",
-        "reducers": "./reducers",
-        "screens": "./screens",
-        "styles": "./styles",
-        "utils": "./utils"
+        "actions": "./app/actions",
+        "api": "./app/api",
+        "components": "./app/components",
+        "config": "./app/config",
+        "constants": "./app/constants",
+        "reducers": "./app/reducers",
+        "screens": "./app/screens",
+        "styles": "./app/styles",
+        "utils": "./app/utils"
       }
     }]
   ]

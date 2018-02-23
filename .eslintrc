@@ -55,6 +55,7 @@
   },
 
   "rules": {
+
   // General
 
     // This must be disallowed in this repo because the minimum supported
