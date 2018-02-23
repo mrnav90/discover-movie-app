@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { store } from './config';
+import { store } from './store';
 import { AppTabbarNavigator } from './navigators';
 
 export default class Application extends Component {

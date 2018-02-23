@@ -5,7 +5,12 @@ const PeopleNavigator = StackNavigator({
   people: {
     screen: PeopleScreen,
     navigationOptions: ({ navigation }) => ({
-      title: 'People'
+      title: 'People',
+      headerStyle: {
+        backgroundColor: 'white',
+        borderBottomWidth: 1,
+        borderBottomColor: '#ebebeb'
+      }
     })
   }
 });

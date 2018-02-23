@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addNavigationHelpers } from 'react-navigation';
-import { tvshowListener } from '../../config';
+import { tvshowListener } from '../../store';
 import { TVShowNavigator } from '../../navigators';
 
 @connect(state => ({

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addNavigationHelpers } from 'react-navigation';
-import { movieListener } from '../../config';
+import { movieListener } from '../../store';
 import { MovieNavigator } from '../../navigators';
 
 @connect(state => ({

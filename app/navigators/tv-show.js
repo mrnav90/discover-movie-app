@@ -5,7 +5,12 @@ const TVShowNavigator = StackNavigator({
   tvshow: {
     screen: TVShowScreen,
     navigationOptions: ({ navigation }) => ({
-      title: 'TV Shows'
+      title: 'TV Shows',
+      headerStyle: {
+        backgroundColor: 'white',
+        borderBottomWidth: 1,
+        borderBottomColor: '#ebebeb'
+      }
     })
   }
 });

@@ -5,7 +5,12 @@ const DiscoverNavigator = StackNavigator({
   discover: {
     screen: DiscoverScreen,
     navigationOptions: ({ navigation }) => ({
-      title: 'Discover'
+      title: 'Discover',
+      headerStyle: {
+        backgroundColor: 'white',
+        borderBottomWidth: 1,
+        borderBottomColor: '#ebebeb'
+      }
     })
   }
 });

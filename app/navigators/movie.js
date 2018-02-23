@@ -5,7 +5,12 @@ const MovieNavigator = StackNavigator({
   movie: {
     screen: MovieScreen,
     navigationOptions: ({ navigation }) => ({
-      title: 'Movies'
+      title: 'Movies',
+      headerStyle: {
+        backgroundColor: 'white',
+        borderBottomWidth: 1,
+        borderBottomColor: '#ebebeb'
+      }
     })
   }
 });
