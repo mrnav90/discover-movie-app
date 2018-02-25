@@ -20,7 +20,7 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-export default class PeopleScreen extends Component<Props> {
+export class TVShowScreen extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>

@@ -1,15 +1,18 @@
+import React from 'react';
 import { StackNavigator } from 'react-navigation';
-import DiscoverScreen from '../screens/DiscoverScreen';
+import { DiscoverScreen } from '../screens/Discover';
+import HeaderNavigation from '../components/HeaderNavigation';
 
 const DiscoverNavigator = StackNavigator({
   discover: {
     screen: DiscoverScreen,
     navigationOptions: ({ navigation }) => ({
-      title: 'Discover',
+      headerLeft: <HeaderNavigation/>,
       headerStyle: {
         backgroundColor: 'white',
         borderBottomWidth: 1,
-        borderBottomColor: '#ebebeb'
+        borderBottomColor: '#ebebeb',
+        height: 64
       }
     })
   }

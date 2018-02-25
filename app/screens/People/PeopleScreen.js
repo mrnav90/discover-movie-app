@@ -20,7 +20,7 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-export default class DiscoverScreen extends Component<Props> {
+export class PeopleScreen extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#F5FCFF',
   },
   welcome: {
     fontSize: 20,

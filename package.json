@@ -7,14 +7,21 @@
     "test": "jest"
   },
   "dependencies": {
+    "moment": "^2.20.1",
+    "prop-types": "^15.6.0",
     "react": "16.2.0",
     "react-native": "^0.53.3",
+    "react-native-fast-image": "^2.2.5",
+    "react-native-image-progress": "^1.1.0",
+    "react-native-progress": "^3.4.0",
+    "react-native-scrollable-tab-view": "^0.8.0",
     "react-native-vector-icons": "^4.5.0",
     "react-navigation": "^1.1.2",
     "react-navigation-redux-helpers": "^1.0.1",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
-    "redux-api": "^0.11.2"
+    "redux-api": "^0.11.2",
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "babel": "^6.23.0",

@@ -1,5 +1,5 @@
 import { StackNavigator } from 'react-navigation';
-import TVShowScreen from '../screens/TVShowScreen';
+import { TVShowScreen } from '../screens/TVShow';
 
 const TVShowNavigator = StackNavigator({
   tvshow: {

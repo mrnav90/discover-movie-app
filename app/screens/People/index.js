@@ -1,0 +1,1 @@
+export { PeopleScreen } from './PeopleScreen';
