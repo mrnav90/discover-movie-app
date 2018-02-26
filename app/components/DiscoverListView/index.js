@@ -6,7 +6,7 @@ import {
   FlatList
 } from 'react-native';
 import { Discover } from '../../api';
-import MovieListItem from '../MovieListItem';
+import MovieItem from '../MovieItem';
 import { ShowIf } from '../../utils';
 
 export default class DiscoverListView extends Component {
@@ -71,7 +71,7 @@ export default class DiscoverListView extends Component {
   }
 
   renderItem = ({item}) => (
-    <MovieListItem type={this.props.type} {...item} />
+    <MovieItem type={this.props.type} {...item} />
   );
 
   render() {

@@ -14,7 +14,7 @@ import { createImageProgress } from 'react-native-image-progress';
 import { BlurView } from 'react-native-blur';
 import DateTime from '../DateTime';
 
-export default class MovieListItem extends Component {
+export default class MovieItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
