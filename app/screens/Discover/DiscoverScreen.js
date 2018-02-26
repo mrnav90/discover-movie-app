@@ -6,9 +6,6 @@ import DiscoverListView from '../../components/DiscoverListView';
 export class DiscoverScreen extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      selectedIndex: 0
-    };
   }
 
   render() {
