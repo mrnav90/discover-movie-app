@@ -23,7 +23,7 @@ export default reduxAPI({
       }
     }
   },
-  popular: {
+  popular_tv: {
     url: `tv/popular?api_key=${API_KEY}`,
     options: {
       method: 'GET',
