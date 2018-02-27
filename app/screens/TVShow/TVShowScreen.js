@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TVShowView from '../../components/TVShowView';
+import TVShowListView from '../../components/TVShowListView';
 import { TabViewAnimated, TabBar } from 'react-native-tab-view';
 import {
   Dimensions,
@@ -39,13 +39,13 @@ export class TVShowScreen extends Component<Props> {
   renderScene = ({ route }) => {
     switch (route.key) {
       case 'airing_today':
-        return <TVShowView type="airing_today"/>;
+        return <TVShowListView type="airing_today"/>;
       case 'on_the_air':
-        return <TVShowView type="on_the_air"/>;
+        return <TVShowListView type="on_the_air"/>;
       case 'popular':
-        return <TVShowView type="popular"/>;
+        return <TVShowListView type="popular"/>;
       case 'top_rated':
-        return <TVShowView type="top_rated"/>;
+        return <TVShowListView type="top_rated"/>;
       default:
         return null;
     }
