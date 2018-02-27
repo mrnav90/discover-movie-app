@@ -27,8 +27,8 @@ export default class TVShowListView extends Component {
       case 'on_the_air':
         this.tvAPI = TVShow.actions.on_the_air;
         break;
-      case 'popular':
-        this.tvAPI = TVShow.actions.popular;
+      case 'popular_tv':
+        this.tvAPI = TVShow.actions.popular_tv;
         break;
       case 'top_rated_tv':
         this.tvAPI = TVShow.actions.top_rated_tv;

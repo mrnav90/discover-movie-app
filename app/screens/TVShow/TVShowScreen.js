@@ -13,7 +13,7 @@ export class TVShowScreen extends Component<Props> {
     this.state = {
       index: 0,
       routes: [
-        { key: 'popular', title: 'Popular' },
+        { key: 'popular_tv', title: 'Popular' },
         { key: 'top_rated_tv', title: 'Top Rated' },
         { key: 'on_the_air', title: 'On The Air' },
         { key: 'airing_today', title: 'TV Airing Today' }
@@ -42,8 +42,8 @@ export class TVShowScreen extends Component<Props> {
         return <TVShowListView type="airing_today"/>;
       case 'on_the_air':
         return <TVShowListView type="on_the_air"/>;
-      case 'popular':
-        return <TVShowListView type="popular"/>;
+      case 'popular_tv':
+        return <TVShowListView type="popular_tv"/>;
       case 'top_rated_tv':
         return <TVShowListView type="top_rated_tv"/>;
       default:
