@@ -42,6 +42,10 @@ export default class MovieItem extends Component {
         postTitle = this.props.title;
         postDate = this.props.release_date;
         break;
+      case 'top_rated_tv':
+        postTitle = this.props.name;
+        postDate = this.props.first_air_date;
+        break
       default:
         postTitle = this.props.name;
         postDate = this.props.first_air_date;
