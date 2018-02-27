@@ -9,7 +9,7 @@ import { TVShow } from '../../api';
 import MovieItem from '../MovieItem';
 import { ShowIf } from '../../utils';
 
-export default class TVShowView extends Component {
+export default class TVShowListView extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,8 +30,8 @@ export default class TVShowView extends Component {
       case 'popular':
         this.tvAPI = TVShow.actions.popular;
         break;
-      case 'top_rated':
-        this.tvAPI = TVShow.actions.top_rated;
+      case 'top_rated_tv':
+        this.tvAPI = TVShow.actions.top_rated_tv;
         break;
       default: break;
     }

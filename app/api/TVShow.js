@@ -33,7 +33,7 @@ export default reduxAPI({
       }
     }
   },
-  top_rated: {
+  top_rated_tv: {
     url: `tv/top_rated?api_key=${API_KEY}`,
     options: {
       method: 'GET',
