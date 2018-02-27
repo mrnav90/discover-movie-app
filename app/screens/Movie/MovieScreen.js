@@ -1,58 +1,25 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
-type Props = {};
+import ScrollableTabView from 'react-native-scrollable-tab-view';
+import ScrollableTabBar from '../../components/ScrollableTabBar';
+import MovieListView from '../../components/MovieListView';
 export class MovieScreen extends Component<Props> {
+  constructor(props) {
+    super(props);
+  }
   render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
-    );
+    return <ScrollableTabView
+      initialPage={0}
+      style={{backgroundColor: 'white'}}
+      locked={true}
+      tabBarBackgroundColor="white"
+      tabBarActiveTextColor="#F08576"
+      tabBarInactiveTextColor="#A2A2A2"
+      renderTabBar={() => <ScrollableTabBar underlineStyle={{height: 1, backgroundColor: '#F08576'}} />}
+    >
+      <MovieListView type="nowPlaying" tabLabel="Now Playing"/>
+      <MovieListView type="popular" tabLabel="Popular"/>
+      <MovieListView type="top_rated" tabLabel="Top Rated"/>
+      <MovieListView type="upcoming" tabLabel="Upcoming"/>
+    </ScrollableTabView>;
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});

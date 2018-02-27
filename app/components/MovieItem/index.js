@@ -29,10 +29,24 @@ export default class MovieItem extends Component {
   }
 
   render() {
+    var postTitle;
+    var postDate;
     const Image = createImageProgress(FastImage);
     const imageWidth = Dimensions.get('window').width - 45;
-    const postTitle = this.props.type === 'movie' ? this.props.title : this.props.name;
-    const postDate = this.props.type === 'movie' ? this.props.release_date : this.props.first_air_date;
+    switch (this.props.type) {
+      case 'nowPlaying':
+      case 'popular':
+      case 'top_rated':
+      case 'upcoming':
+      case 'movie':
+        postTitle = this.props.title;
+        postDate = this.props.release_date;
+        break;
+      default:
+        postTitle = this.props.name;
+        postDate = this.props.first_air_date;
+        break
+    }
     return (
       <View style={styles.itemImage}>
         <Image
