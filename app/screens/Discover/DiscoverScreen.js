@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import DiscoverListView from '../../components/DiscoverListView';
 import { TabViewAnimated, TabBar } from 'react-native-tab-view';
 import {
-  Dimensions
+  Dimensions,
+  Animated
 } from 'react-native';
 
 export class DiscoverScreen extends Component {
@@ -22,11 +23,27 @@ export class DiscoverScreen extends Component {
   renderHeader = (props) => {
     return <TabBar
       style={{backgroundColor: 'white'}}
+      renderLabel={this.renderLabel(props)}
       indicatorStyle={{backgroundColor: '#F08576', height: 1}}
-      tabStyle={{opacity: 1}}
       labelStyle={{color: '#F08576'}}
       {...props}
     />;
+  }
+
+  renderLabel = props => ({ route, index }) => {
+    const inputRange = props.navigationState.routes.map((x, i) => i);
+    const outputRange = inputRange.map(
+      inputIndex => (inputIndex === index ? '#F08576' : '#A2A2A2')
+    );
+    const color = props.position.interpolate({
+      inputRange,
+      outputRange,
+    });
+    return (
+      <Animated.Text style={[{fontSize: 14, fontWeight: 'bold', margin: 8}, { color }]}>
+        {route.title}
+      </Animated.Text>
+    );
   }
 
   renderScene = ({ route }) => {

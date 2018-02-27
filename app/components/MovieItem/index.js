@@ -29,12 +29,12 @@ export default class MovieItem extends Component {
   }
 
   render() {
-    var postTitle;
-    var postDate;
+    let postTitle = null;
+    let postDate = null;
     const Image = createImageProgress(FastImage);
-    const imageWidth = Dimensions.get('window').width - 45;
+    const imageWidth = Dimensions.get('window').width - 40;
     switch (this.props.type) {
-      case 'nowPlaying':
+      case 'now_playing':
       case 'popular':
       case 'top_rated':
       case 'upcoming':
@@ -45,50 +45,55 @@ export default class MovieItem extends Component {
       default:
         postTitle = this.props.name;
         postDate = this.props.first_air_date;
-        break
+        break;
     }
     return (
-      <View style={styles.itemImage}>
-        <Image
-          ref={(img) => { this.backgroundImage = img; }}
-          onLoadEnd={this.imageLoaded}
-          indicator={Progress.Pie}
-          imageStyle={{borderRadius: 10}}
-          style={{width: imageWidth, height: 450}}
-          source={{uri: HOST_IMAGE + 'w300_and_h450_bestv2' + this.props.backdrop_path}}
-        />
-        <BlurView style={styles.itemContent} viewRef={this.state.viewRef} blurType="dark" blurAmount={1}>
-          <Text style={styles.postTitle}>{postTitle}</Text>
-          <DateTime style={styles.postRelease} date={postDate} format="MMMM D, YYYY"/>
-          <View style={styles.viewFavorite}>
-            <MaterialIcons style={{marginTop: 2}} name="favorite" size={15} color="white" />
-            <Text style={styles.postFavorite}>{this.props.vote_count}</Text>
-            <MaterialIcons style={{marginTop: 2}} name="grade" size={15} color="white" />
-            <Text style={styles.postFavorite}>{this.props.vote_average}</Text>
-          </View>
-        </BlurView>
+      <View style={styles.container}>
+        <View style={styles.itemImage}>
+          <Image
+            ref={(img) => { this.backgroundImage = img; }}
+            onLoadEnd={this.imageLoaded}
+            indicator={Progress.Pie}
+            imageStyle={{borderRadius: 10}}
+            style={{width: imageWidth, height: 450}}
+            source={{uri: HOST_IMAGE + 'w300_and_h450_bestv2' + this.props.backdrop_path}}
+          />
+          <BlurView style={styles.itemContent} viewRef={this.state.viewRef} blurType="dark" blurAmount={1}>
+            <Text style={styles.postTitle}>{postTitle}</Text>
+            <DateTime style={styles.postRelease} date={postDate} format="MMMM D, YYYY"/>
+            <View style={styles.viewFavorite}>
+              <MaterialIcons style={{marginTop: 2}} name="favorite" size={15} color="white" />
+              <Text style={styles.postFavorite}>{this.props.vote_count}</Text>
+              <MaterialIcons style={{marginTop: 2}} name="grade" size={15} color="white" />
+              <Text style={styles.postFavorite}>{this.props.vote_average}</Text>
+            </View>
+          </BlurView>
+        </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  itemImage: {
+  container: {
     flex: 1,
     shadowOffset: { width: 0,  height: 10 },
     shadowColor: 'black',
     shadowOpacity: 0.1,
     shadowRadius: 2,
+  },
+  itemImage: {
     marginBottom: 20,
-    position: 'relative'
+    position: 'relative',
+    borderRadius: 10,
+    overflow: 'hidden'
   },
   itemContent: {
     position: 'absolute',
     left: 0,
-    right: 3,
+    right: 0,
     padding: 20,
-    bottom: 0,
-    borderRadius: 10
+    bottom: 0
   },
   postTitle: {
     color: 'white',

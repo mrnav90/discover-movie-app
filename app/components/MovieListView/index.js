@@ -21,17 +21,17 @@ export default class MovieListView extends Component {
       totalPage: 1
     };
     switch (this.props.type) {
-      case 'nowPlaying':
-        this.movieAPI = Movie.actions.now_playing
+      case 'now_playing':
+        this.movieAPI = Movie.actions.now_playing;
         break;
       case 'popular':
-        this.movieAPI = Movie.actions.popular
+        this.movieAPI = Movie.actions.popular;
         break;
       case 'top_rated':
-        this.movieAPI = Movie.actions.top_rated
+        this.movieAPI = Movie.actions.top_rated;
         break;
       case 'upcoming':
-        this.movieAPI = Movie.actions.upcoming
+        this.movieAPI = Movie.actions.upcoming;
         break;
       default: break;
     }
