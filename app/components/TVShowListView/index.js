@@ -39,10 +39,10 @@ export default class TVShowListView extends Component {
   }
 
   componentDidMount() {
-    this.getListMovieFromNowPlaying();
+    this.getListMovie();
   }
 
-  getListMovieFromNowPlaying() {
+  getListMovie() {
     this.setState({isLoading: true});
     this.tvAPI.request({page: this.state.page}).then(response => {
       this.setState({
@@ -59,7 +59,7 @@ export default class TVShowListView extends Component {
   loadMore() {
     if (this.state.page < this.state.totalPage) {
       this.setState({isLoadMore: true, page: this.state.page + 1}, () => {
-        this.discoverAPI.request({page: this.state.page}).then(response => {
+        this.tvAPI.request({page: this.state.page}).then(response => {
           this.setState({
             isLoadMore: false,
             total: response.total_results,

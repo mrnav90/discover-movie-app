@@ -1,15 +1,18 @@
+import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import { TVShowScreen } from '../screens/TVShow';
+import HeaderNavigation from '../components/HeaderNavigation';
 
 const TVShowNavigator = StackNavigator({
   tvshow: {
     screen: TVShowScreen,
     navigationOptions: ({ navigation }) => ({
-      title: 'TV Shows',
+      headerLeft: <HeaderNavigation/>,
       headerStyle: {
         backgroundColor: 'white',
         borderBottomWidth: 1,
-        borderBottomColor: '#ebebeb'
+        borderBottomColor: '#ebebeb',
+        height: 64
       }
     })
   }

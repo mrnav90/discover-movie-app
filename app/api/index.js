@@ -1,6 +1,6 @@
 import Discover from './discover';
 import Movie from './movie';
-import TVShow from './TVShow';
+import TVShow from './tvshow';
 export {
   Discover,
   Movie,

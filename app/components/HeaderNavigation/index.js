@@ -28,7 +28,7 @@ export default class HeaderNavigation extends Component {
             <MaterialIcons style={styles.inputIcon} name="search" size={25} color="#A2A2A2" />
         </View>
         <TouchableOpacity style={styles.btn} onPress={this.onSearch}>
-          <MaterialIcons name="send" size={25} color="#F08576" />
+          <MaterialIcons name="send" size={25} color="white" />
         </TouchableOpacity>
       </View>
     );
@@ -51,20 +51,17 @@ const styles = StyleSheet.create({
     left: 10,
   },
   btn: {
-    shadowOffset: { width: 1,  height: 1 },
-    shadowColor: 'black',
-    shadowOpacity: 0.1,
-    borderRadius: 30,
-    padding: 5,
+    padding: 7,
     paddingLeft: 10,
-    backgroundColor: 'white'
+    backgroundColor: '#F08576'
   },
   input: {
     height: 40,
     backgroundColor: '#F3F3F3',
-    borderRadius: 30,
+    borderTopLeftRadius: 30,
+    borderBottomLeftRadius: 30,
     paddingLeft: 40,
     paddingRight: 10,
-    width: '95%'
+    width: '100%'
   }
 });
