@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
   },
   itemImage: {
-    marginBottom: 20,
+    marginTop: 20,
     position: 'relative',
     borderRadius: 10,
     overflow: 'hidden'
