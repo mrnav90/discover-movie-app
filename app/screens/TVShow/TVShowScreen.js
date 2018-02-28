@@ -62,7 +62,7 @@ export class TVShowScreen extends Component<Props> {
   }
   render() {
     return <TabViewAnimated
-      style={{flex: 1}}
+      style={{flex: 1, backgroundColor: 'white'}}
       navigationState={this.state}
       renderScene={this.renderScene}
       renderHeader={this.renderHeader}
