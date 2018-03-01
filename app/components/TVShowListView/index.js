@@ -5,11 +5,11 @@ import {
   ActivityIndicator,
   FlatList
 } from 'react-native';
-import { Movie } from '../../api';
+import { TVShow } from '../../api';
 import MovieItem from '../MovieItem';
 import { ShowIf } from '../../utils';
 
-export default class MovieListView extends Component {
+export default class TVShowListView extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,17 +21,17 @@ export default class MovieListView extends Component {
       totalPage: 1
     };
     switch (this.props.type) {
-      case 'now_playing':
-        this.movieAPI = Movie.actions.now_playing;
+      case 'airing_today':
+        this.tvAPI = TVShow.actions.airing_today;
         break;
-      case 'popular':
-        this.movieAPI = Movie.actions.popular;
+      case 'on_the_air':
+        this.tvAPI = TVShow.actions.on_the_air;
         break;
-      case 'top_rated':
-        this.movieAPI = Movie.actions.top_rated;
+      case 'popular_tv':
+        this.tvAPI = TVShow.actions.popular_tv;
         break;
-      case 'upcoming':
-        this.movieAPI = Movie.actions.upcoming;
+      case 'top_rated_tv':
+        this.tvAPI = TVShow.actions.top_rated_tv;
         break;
       default: break;
     }
@@ -44,7 +44,7 @@ export default class MovieListView extends Component {
 
   getListMovie() {
     this.setState({isLoading: true});
-    this.movieAPI.request({page: this.state.page}).then(response => {
+    this.tvAPI.request({page: this.state.page}).then(response => {
       this.setState({
         isLoading: false,
         total: response.total_results,
@@ -59,7 +59,7 @@ export default class MovieListView extends Component {
   loadMore() {
     if (this.state.page < this.state.totalPage) {
       this.setState({isLoadMore: true, page: this.state.page + 1}, () => {
-        this.movieAPI.request({page: this.state.page}).then(response => {
+        this.tvAPI.request({page: this.state.page}).then(response => {
           this.setState({
             isLoadMore: false,
             total: response.total_results,

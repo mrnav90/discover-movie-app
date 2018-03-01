@@ -1,25 +1,70 @@
 import React, { Component } from 'react';
-import ScrollableTabView from 'react-native-scrollable-tab-view';
-import ScrollableTabBar from '../../components/ScrollableTabBar';
 import DiscoverListView from '../../components/DiscoverListView';
+import { TabViewAnimated, TabBar } from 'react-native-tab-view';
+import {
+  Dimensions,
+  Animated
+} from 'react-native';
 
 export class DiscoverScreen extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      index: 0,
+      routes: [
+        { key: 'movie', title: 'Movies' },
+        { key: 'tvshow', title: 'TV Shows' }
+      ]
+    };
+  }
+
+  onIndexChange = (index) => this.setState({ index });
+
+  renderHeader = (props) => {
+    return <TabBar
+      style={{backgroundColor: 'white'}}
+      renderLabel={this.renderLabel(props)}
+      indicatorStyle={{backgroundColor: '#F08576', height: 1}}
+      labelStyle={{color: '#F08576'}}
+      {...props}
+    />;
+  }
+
+  renderLabel = props => ({ route, index }) => {
+    const inputRange = props.navigationState.routes.map((x, i) => i);
+    const outputRange = inputRange.map(
+      inputIndex => (inputIndex === index ? '#F08576' : '#A2A2A2')
+    );
+    const color = props.position.interpolate({
+      inputRange,
+      outputRange,
+    });
+    return (
+      <Animated.Text style={[{fontSize: 14, fontWeight: 'bold', margin: 8}, { color }]}>
+        {route.title}
+      </Animated.Text>
+    );
+  }
+
+  renderScene = ({ route }) => {
+    switch (route.key) {
+      case 'movie':
+        return <DiscoverListView type="movie"/>;
+      case 'tvshow':
+        return <DiscoverListView type="tvshow"/>;
+      default:
+        return null;
+    }
   }
 
   render() {
-    return <ScrollableTabView
-      initialPage={0}
-      style={{backgroundColor: 'white'}}
-      locked={true}
-      tabBarBackgroundColor="white"
-      tabBarActiveTextColor="#F08576"
-      tabBarInactiveTextColor="#A2A2A2"
-      renderTabBar={() => <ScrollableTabBar underlineStyle={{height: 1, backgroundColor: '#F08576'}} />}
-    >
-      <DiscoverListView type="movie" tabLabel="Movies"/>
-      <DiscoverListView type="tvshow" tabLabel="TV Shows"/>
-    </ScrollableTabView>;
+    return <TabViewAnimated
+        style={{flex: 1, backgroundColor: 'white'}}
+        navigationState={this.state}
+        renderScene={this.renderScene}
+        renderHeader={this.renderHeader}
+        onIndexChange={this.onIndexChange}
+        initialLayout={{width: Dimensions.get('window').width, height: 0}}
+      />;
   }
 }

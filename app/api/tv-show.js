@@ -3,8 +3,8 @@ import adapterFetch from 'redux-api/lib/adapters/fetch';
 import { API_URL, API_KEY } from '../constants';
 
 export default reduxAPI({
-  now_playing: {
-    url: `movie/now_playing?api_key=${API_KEY}`,
+  airing_today: {
+    url: `tv/airing_today?api_key=${API_KEY}`,
     options: {
       method: 'GET',
       headers: {
@@ -13,8 +13,8 @@ export default reduxAPI({
       }
     }
   },
-  popular: {
-    url: `movie/popular?api_key=${API_KEY}`,
+  on_the_air: {
+    url: `tv/on_the_air?api_key=${API_KEY}`,
     options: {
       method: 'GET',
       headers: {
@@ -23,8 +23,8 @@ export default reduxAPI({
       }
     }
   },
-  top_rated: {
-    url: `movie/top_rated?api_key=${API_KEY}`,
+  popular_tv: {
+    url: `tv/popular?api_key=${API_KEY}`,
     options: {
       method: 'GET',
       headers: {
@@ -33,8 +33,8 @@ export default reduxAPI({
       }
     }
   },
-  upcoming: {
-    url: `movie/upcoming?api_key=${API_KEY}`,
+  top_rated_tv: {
+    url: `tv/top_rated?api_key=${API_KEY}`,
     options: {
       method: 'GET',
       headers: {
