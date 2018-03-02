@@ -1,8 +1,8 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import { DiscoverScreen } from '../screens/Discover';
-import SearchMovie from '../screens/SearchMovie';
 import HeaderNavigation from '../components/HeaderNavigation';
+import SearchMovie from '../screens/SearchMovie';
 
 const DiscoverNavigator = StackNavigator({
   discover: {
@@ -20,14 +20,12 @@ const DiscoverNavigator = StackNavigator({
   search: {
     screen: SearchMovie,
     navigationOptions: ({ navigation }) => ({
-      title: 'Search',
-      headerStyle: {
-        backgroundColor: 'white',
-        borderBottomWidth: 1,
-        borderBottomColor: '#ebebeb',
-      }
+      header: null
     })
   }
+}, {
+  // headerMode: 'none',
+  mode: 'modal'
 });
 
 export { DiscoverNavigator };

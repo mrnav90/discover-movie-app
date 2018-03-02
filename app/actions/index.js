@@ -1,0 +1,1 @@
+export { searchScreen } from './discover';
