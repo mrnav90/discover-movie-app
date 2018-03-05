@@ -20,7 +20,9 @@ export class TVShowScreen extends Component<Props> {
       ]
     };
   }
+
   onIndexChange = (index) => this.setState({ index });
+
   renderLabel = props => ({ route, index }) => {
     const inputRange = props.navigationState.routes.map((x, i) => i);
     const outputRange = inputRange.map(
@@ -36,6 +38,7 @@ export class TVShowScreen extends Component<Props> {
       </Animated.Text>
     );
   }
+
   renderScene = ({ route }) => {
     switch (route.key) {
       case 'airing_today':
@@ -50,6 +53,7 @@ export class TVShowScreen extends Component<Props> {
         return null;
     }
   }
+
   renderHeader = (props) => {
     return <TabBar
       scrollEnabled={true}
@@ -60,6 +64,7 @@ export class TVShowScreen extends Component<Props> {
       {...props}
     />;
   }
+
   render() {
     return <TabViewAnimated
       style={{flex: 1, backgroundColor: 'white'}}
