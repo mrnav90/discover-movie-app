@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { TextInput, StyleSheet, View, TouchableOpacity } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { connect } from 'react-redux';
+import { searchScreen } from '../../actions';
+
+@connect(state => ({
+  nav: state.discoverNavigation
+}))
 
 export default class HeaderNavigation extends Component {
   constructor(props, context) {
@@ -12,7 +18,7 @@ export default class HeaderNavigation extends Component {
   }
 
   onSearch() {
-
+    this.props.dispatch(searchScreen(this.state));
   }
 
   render() {

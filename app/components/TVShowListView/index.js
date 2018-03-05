@@ -5,6 +5,7 @@ import {
   ActivityIndicator,
   FlatList
 } from 'react-native';
+import { Bubbles } from 'react-native-loader';
 import { TVShow } from '../../api';
 import MovieItem from '../MovieItem';
 import { ShowIf } from '../../utils';
@@ -92,20 +93,22 @@ export default class TVShowListView extends Component {
     return (
       <View style={styles.container}>
         <ShowIf condition={this.state.isLoading}>
-          <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: 100}}>
-            <ActivityIndicator animating size="small" />
+          <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+            <Bubbles size={10} color="#F08576" />
           </View>
         </ShowIf>
-        <FlatList
-          data={this.state.data}
-          showsHorizontalScrollIndicator={false}
-          showsVerticalScrollIndicator={false}
-          keyExtractor={(item, index) => index.toString()}
-          ListFooterComponent={this.renderLoadMore}
-          renderItem={this.renderItem}
-          onEndReached={this.loadMore}
-          onEndReachedThreshold={100}
-        />
+        <ShowIf condition={!this.state.isLoading}>
+          <FlatList
+            data={this.state.data}
+            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
+            keyExtractor={(item, index) => index.toString()}
+            ListFooterComponent={this.renderLoadMore}
+            renderItem={this.renderItem}
+            onEndReached={this.loadMore}
+            onEndReachedThreshold={100}
+          />
+        </ShowIf>
       </View>
     );
   }

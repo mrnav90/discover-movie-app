@@ -9,10 +9,10 @@ const discoverMiddleware = createReactNavigationReduxMiddleware('discover', stat
 const movieMiddleware = createReactNavigationReduxMiddleware('movie', state => state.movieNavigation);
 const peopleMiddleware = createReactNavigationReduxMiddleware('people', state => state.peopleNavigation);
 const tvshowMiddleware = createReactNavigationReduxMiddleware('tv-show', state => state.tvshowNavigation);
-const tvshowListener = createReduxBoundAddListener('tv-show');
 const discoverListener = createReduxBoundAddListener('discover');
 const peopleListener = createReduxBoundAddListener('people');
 const movieListener = createReduxBoundAddListener('movie');
+const tvshowListener = createReduxBoundAddListener('tv-show');
 
 const store = createStore(rootReducer, applyMiddleware(discoverMiddleware, movieMiddleware, peopleMiddleware, tvshowMiddleware));
 
