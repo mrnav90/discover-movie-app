@@ -68,6 +68,7 @@ export class MovieScreen extends Component<Props> {
     return <TabViewAnimated
       style={{flex: 1, backgroundColor: 'white'}}
       navigationState={this.state}
+      animationEnabled={false}
       renderScene={this.renderScene}
       renderHeader={this.renderHeader}
       onIndexChange={this.onIndexChange}
