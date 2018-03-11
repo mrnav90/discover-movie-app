@@ -6,9 +6,9 @@ import {
   FlatList
 } from 'react-native';
 import PropTypes from 'prop-types';
+import MovieItem from '../MovieItem';
 import { Bubbles } from 'react-native-loader';
 import { Discover } from '../../api';
-import MovieItem from '../MovieItem';
 import { ShowIf } from '../../utils';
 import { connect } from 'react-redux';
 

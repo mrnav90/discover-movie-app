@@ -1,6 +1,6 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
-import SearchMovie from '../screens/SearchMovie';
+import { SearchScreen } from '../screens/Search';
 import { AppTabbarNavigator } from './tabbar';
 import BackButton from '../components/BackButton';
 import HeaderNavigation from '../components/HeaderNavigation';
@@ -12,7 +12,7 @@ const ApplicationNavigator = StackNavigator({
   Search: {
     screen: StackNavigator({
       main: {
-        screen: SearchMovie,
+        screen: SearchScreen,
         navigationOptions: ({ navigation }) => ({
           headerRight: <HeaderNavigation hasBackButton={true}/>,
           headerLeft: <BackButton/>,

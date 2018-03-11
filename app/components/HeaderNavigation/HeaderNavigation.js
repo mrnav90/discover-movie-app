@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import { TextInput, StyleSheet, View, TouchableOpacity } from 'react-native';
+import { TextInput, StyleSheet, View, TouchableOpacity, Alert } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { withNavigation } from 'react-navigation';
+import { connect } from 'react-redux';
+import { searchAll } from '../../actions';
+
+@connect(state => ({
+  search: state.search
+}))
 
 class HeaderNavigation extends Component {
 
@@ -12,7 +18,7 @@ class HeaderNavigation extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: this.props.navigation.getParam('search') ? this.props.navigation.getParam('search') : ''
+      search: this.props.search.keyword || ''
     };
     this.onSearch = this.onSearch.bind(this);
   }
@@ -20,10 +26,11 @@ class HeaderNavigation extends Component {
   onSearch() {
     if (this.state.search !== '') {
       if (this.props.navigation.state.routeName !== 'Search') {
-        this.props.navigation.navigate('Search', this.state);
+        this.props.navigation.navigate('Search');
       }
+      this.props.dispatch(searchAll(this.state.search));
     } else {
-      alert('Please fill');
+      Alert.alert('Search', 'Please enter keywords!');
     }
   }
 

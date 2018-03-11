@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0,  height: 10 },
     shadowColor: 'black',
     shadowOpacity: 0.1,
-    shadowRadius: 2,
+    shadowRadius: 2
   },
   itemImage: {
     marginTop: 20,
