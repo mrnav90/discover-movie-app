@@ -100,7 +100,7 @@ export default class TVShowListView extends Component {
       <View style={styles.container}>
         <ShowIf condition={this.state.isLoading}>
           <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-            <Bubbles size={10} color="#F08576" />
+            <Bubbles size={10} color="#418ADB" />
           </View>
         </ShowIf>
         <ShowIf condition={!this.state.isLoading}>

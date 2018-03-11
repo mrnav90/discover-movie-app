@@ -10,6 +10,11 @@ import { Bubbles } from 'react-native-loader';
 import { Discover } from '../../api';
 import MovieItem from '../MovieItem';
 import { ShowIf } from '../../utils';
+import { connect } from 'react-redux';
+
+@connect(state => ({
+  nav: state.discoverNavigation
+}))
 
 export default class DiscoverListView extends Component {
 
@@ -86,7 +91,7 @@ export default class DiscoverListView extends Component {
       <View style={styles.container}>
         <ShowIf condition={this.state.isLoading}>
           <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-            <Bubbles size={10} color="#F08576" />
+            <Bubbles size={10} color="#418ADB" />
           </View>
         </ShowIf>
         <ShowIf condition={!this.state.isLoading}>

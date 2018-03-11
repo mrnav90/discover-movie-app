@@ -21,11 +21,6 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class SearchMovie extends Component<Props> {
-
-  componentDidMount() {
-    console.log(this.props);
-  }
-
   render() {
     return (
       <View style={styles.container}>
