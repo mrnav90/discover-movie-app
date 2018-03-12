@@ -24,8 +24,8 @@ export class DiscoverScreen extends Component {
     return <TabBar
       style={{backgroundColor: 'white'}}
       renderLabel={this.renderLabel(props)}
-      indicatorStyle={{backgroundColor: '#F08576', height: 1}}
-      labelStyle={{color: '#F08576'}}
+      indicatorStyle={{backgroundColor: '#418ADB', height: 1}}
+      labelStyle={{color: '#418ADB'}}
       {...props}
     />;
   }
@@ -33,7 +33,7 @@ export class DiscoverScreen extends Component {
   renderLabel = props => ({ route, index }) => {
     const inputRange = props.navigationState.routes.map((x, i) => i);
     const outputRange = inputRange.map(
-      inputIndex => (inputIndex === index ? '#F08576' : '#A2A2A2')
+      inputIndex => (inputIndex === index ? '#418ADB' : '#A2A2A2')
     );
     const color = props.position.interpolate({
       inputRange,
@@ -61,10 +61,12 @@ export class DiscoverScreen extends Component {
     return <TabViewAnimated
         style={{flex: 1, backgroundColor: 'white'}}
         navigationState={this.state}
+        animationEnabled={false}
         renderScene={this.renderScene}
         renderHeader={this.renderHeader}
         onIndexChange={this.onIndexChange}
         initialLayout={{width: Dimensions.get('window').width, height: 0}}
+        useNativeDriver
       />;
   }
 }

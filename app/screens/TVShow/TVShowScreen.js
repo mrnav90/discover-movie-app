@@ -20,11 +20,13 @@ export class TVShowScreen extends Component<Props> {
       ]
     };
   }
+
   onIndexChange = (index) => this.setState({ index });
+
   renderLabel = props => ({ route, index }) => {
     const inputRange = props.navigationState.routes.map((x, i) => i);
     const outputRange = inputRange.map(
-      inputIndex => (inputIndex === index ? '#F08576' : '#A2A2A2')
+      inputIndex => (inputIndex === index ? '#418ADB' : '#A2A2A2')
     );
     const color = props.position.interpolate({
       inputRange,
@@ -36,6 +38,7 @@ export class TVShowScreen extends Component<Props> {
       </Animated.Text>
     );
   }
+
   renderScene = ({ route }) => {
     switch (route.key) {
       case 'airing_today':
@@ -50,24 +53,28 @@ export class TVShowScreen extends Component<Props> {
         return null;
     }
   }
+
   renderHeader = (props) => {
     return <TabBar
       scrollEnabled={true}
       style={{backgroundColor: 'white'}}
       renderLabel={this.renderLabel(props)}
-      indicatorStyle={{backgroundColor: '#F08576', height: 1}}
-      labelStyle={{color: '#F08576'}}
+      indicatorStyle={{backgroundColor: '#418ADB', height: 1}}
+      labelStyle={{color: '#418ADB'}}
       {...props}
     />;
   }
+
   render() {
     return <TabViewAnimated
       style={{flex: 1, backgroundColor: 'white'}}
       navigationState={this.state}
+      animationEnabled={false}
       renderScene={this.renderScene}
       renderHeader={this.renderHeader}
       onIndexChange={this.onIndexChange}
       initialLayout={{width: Dimensions.get('window').width, height: 0}}
+      useNativeDriver
     />;
   }
 }

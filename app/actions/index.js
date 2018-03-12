@@ -1,1 +1,1 @@
-export { searchScreen } from './discover';
+export { searchAll } from './search';

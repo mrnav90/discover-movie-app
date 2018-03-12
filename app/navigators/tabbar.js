@@ -38,7 +38,7 @@ const AppTabbarNavigator = TabNavigator(
       },
     }),
     tabBarOptions: {
-      activeTintColor: '#F08576',
+      activeTintColor: '#418ADB',
       inactiveTintColor: '#929292',
       showLabel: false,
       indicatorStyle: {
