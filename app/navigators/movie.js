@@ -1,6 +1,6 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
-import { MovieScreen } from '../screens/Movie';
+import MovieScreen from '../screens/MovieScreen';
 import HeaderNavigation from '../components/HeaderNavigation';
 
 const MovieNavigator = StackNavigator({

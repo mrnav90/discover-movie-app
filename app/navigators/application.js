@@ -1,6 +1,6 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
-import { SearchScreen } from '../screens/Search';
+import SearchScreen from '../screens/SearchScreen';
 import { AppTabbarNavigator } from './tabbar';
 import BackButton from '../components/BackButton';
 import HeaderNavigation from '../components/HeaderNavigation';

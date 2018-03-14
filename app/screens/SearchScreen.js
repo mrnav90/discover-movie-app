@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import SearchListView from '../../components/SearchListView';
+import SearchListView from '../components/SearchListView';
 
-export class SearchScreen extends Component {
+export default class SearchScreen extends Component {
   constructor(props) {
     super(props);
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
-import { TVShowScreen } from '../screens/TVShow';
+import TVShowScreen from '../screens/TVShowScreen';
 import HeaderNavigation from '../components/HeaderNavigation';
 
 const TVShowNavigator = StackNavigator({

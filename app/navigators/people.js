@@ -1,5 +1,5 @@
 import { StackNavigator } from 'react-navigation';
-import { PeopleScreen } from '../screens/People';
+import PeopleScreen from '../screens/PeopleScreen';
 
 const PeopleNavigator = StackNavigator({
   people: {

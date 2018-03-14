@@ -1,6 +1,6 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
-import { DiscoverScreen } from '../screens/Discover';
+import DiscoverScreen from '../screens/DiscoverScreen';
 import HeaderNavigation from '../components/HeaderNavigation';
 
 const DiscoverNavigator = StackNavigator({
