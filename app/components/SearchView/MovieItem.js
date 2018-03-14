@@ -13,7 +13,7 @@ import { createImageProgress } from 'react-native-image-progress';
 import DateTime from '../DateTime';
 import { ShowIf } from '../../utils';
 
-export default class SearchItem extends Component {
+export default class MovieItem extends Component {
 
   static propTypes = {
     media_type: PropTypes.string,

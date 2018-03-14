@@ -18,7 +18,7 @@ class HeaderNavigation extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: this.props.search.keyword || 'The walking dead'
+      search: this.props.search.keyword || 'andrew lincoln'
     };
     this.onSearch = this.onSearch.bind(this);
   }

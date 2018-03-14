@@ -5,12 +5,12 @@ import {
   FlatList,
   StyleSheet
 } from 'react-native';
-import SearchItem from '../SearchItem';
 import { withNavigation } from 'react-navigation';
 import { connect } from 'react-redux';
 import { Search } from '../../api';
 import { Bubbles } from 'react-native-loader';
 import { ShowIf } from '../../utils';
+import { ActorItem, MovieItem } from '../SearchView';
 
 @connect(state => ({
   search: state.search
@@ -88,7 +88,7 @@ export default class SearchListView extends Component {
   }
 
   renderItem = ({item}) => (
-    <SearchItem {...item} />
+    ['tv', 'movie'].indexOf(item.media_type) !== -1 ? <MovieItem {...item} /> : <ActorItem {...item} />
   );
 
   render() {

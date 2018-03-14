@@ -8,7 +8,7 @@ import {
 import PropTypes from 'prop-types';
 import { Bubbles } from 'react-native-loader';
 import { Movie } from '../../api';
-import MovieItem from '../MovieItem';
+import ListMovieItem from '../ListMovieItem';
 import { ShowIf } from '../../utils';
 
 export default class MovieListView extends Component {
@@ -92,7 +92,7 @@ export default class MovieListView extends Component {
   }
 
   renderItem = ({item}) => (
-    <MovieItem type={this.props.type} {...item} />
+    <ListMovieItem type={this.props.type} {...item} />
   );
 
   render() {
