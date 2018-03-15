@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TextInput, StyleSheet, View, TouchableOpacity, Alert } from 'react-native';
+import { TextInput, StyleSheet, View, TouchableOpacity, Alert, Keyboard } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { withNavigation } from 'react-navigation';
 import { connect } from 'react-redux';
@@ -44,7 +44,11 @@ class HeaderNavigation extends Component {
       <View style={styles.container}>
         <View style={styles.searchView}>
           <TextInput
+            returnKeyType="search"
+            autoCorrect={false}
+            onBlur={() => {Keyboard.dismiss();}}
             style={[styles.input, styleInput]}
+            onSubmitEditing={this.onSearch}
             placeholder="Search for a movie, tv show, person..."
             placeholderTextColor="#B5B5B5"
             value={this.state.search}

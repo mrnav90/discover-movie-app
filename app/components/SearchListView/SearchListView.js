@@ -3,14 +3,16 @@ import {
   View,
   ActivityIndicator,
   FlatList,
+  Text,
   StyleSheet
 } from 'react-native';
-import { withNavigation } from 'react-navigation';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { connect } from 'react-redux';
 import { Search } from '../../api';
 import { Bubbles } from 'react-native-loader';
 import { ShowIf } from '../../utils';
-import { ActorItem, MovieItem } from '../SearchView';
+import ActorItem from './ActorItem';
+import MovieItem from './MovieItem';
 
 @connect(state => ({
   search: state.search
@@ -99,7 +101,7 @@ export default class SearchListView extends Component {
             <Bubbles size={10} color="#418ADB" />
           </View>
         </ShowIf>
-        <ShowIf condition={!this.state.isLoading}>
+        <ShowIf condition={!this.state.isLoading && this.state.data.length > 0}>
           <FlatList
             data={this.state.data}
             showsHorizontalScrollIndicator={false}
@@ -111,6 +113,13 @@ export default class SearchListView extends Component {
             onEndReachedThreshold={0}
           />
         </ShowIf>
+        <ShowIf condition={!this.state.isLoading && this.state.data.length === 0}>
+          <View style={styles.emptyData}>
+            <MaterialIcons name="movie-filter" size={150} color="#A2A2A2" />
+            <Text style={{fontWeight: 'bold', fontSize: 18, color: '#414141'}}>No results found.</Text>
+            <Text style={{color: '#A2A2A2', width: 270, textAlign: 'center', marginTop: 10, fontWeight: 'bold', fontSize: 16}}>We can't find any item matching your search.</Text>
+          </View>
+        </ShowIf>
       </View>
     );
   }
@@ -120,5 +129,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#e9ebee'
+  },
+  emptyData: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });
