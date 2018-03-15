@@ -4,7 +4,8 @@ import {
   View,
   findNodeHandle,
   StyleSheet,
-  Dimensions
+  Dimensions,
+  Image
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { HOST_IMAGE } from '../../constants';
@@ -14,6 +15,7 @@ import { createImageProgress } from 'react-native-image-progress';
 import Swiper from 'react-native-swiper';
 import DateTime from '../DateTime';
 import { BlurView } from 'react-native-blur';
+import { ShowIf } from '../../utils';
 
 export default class ActorItem extends Component {
 
@@ -62,14 +64,19 @@ export default class ActorItem extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.actorView}>
-          <ImageCache
-            ref={(img) => { this.avatarImage = img; }}
-            onLoadEnd={this.avatarImageLoaded}
-            indicator={Progress.Pie}
-            imageStyle={{borderRadius: 23}}
-            style={{width: 45, height: 45}}
-            source={{uri: HOST_IMAGE + 'w45' + this.props.profile_path}}
-          />
+          <ShowIf condition={this.props.profile_path !== null}>
+            <ImageCache
+              ref={(img) => { this.avatarImage = img; }}
+              onLoadEnd={this.avatarImageLoaded}
+              indicator={Progress.Pie}
+              imageStyle={{borderRadius: 23}}
+              style={{width: 45, height: 45}}
+              source={{uri: HOST_IMAGE + 'w45' + this.props.profile_path}}
+            />
+          </ShowIf>
+          <ShowIf condition={this.props.profile_path === null}>
+            <Image source={require('../../../assets/images/no-avatar.jpg')} style={{width: 45, height: 45}} />
+          </ShowIf>
           <View style={styles.actorInfo}>
             <Text style={{fontWeight: 'bold', fontSize: 14}}>{this.props.name}</Text>
             <Text style={{fontSize: 12, color: '#418ADB'}}>{this.state.knowFor}</Text>

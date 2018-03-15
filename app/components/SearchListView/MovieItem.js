@@ -67,7 +67,6 @@ export default class MovieItem extends Component {
             ref={(img) => { this.backgroundImage = img; }}
             onLoadEnd={this.imageLoaded}
             indicator={Progress.Pie}
-            resizeMode="contain"
             style={{width: 135}}
             source={{uri: HOST_IMAGE + 'w185' + imagePath}}
           />

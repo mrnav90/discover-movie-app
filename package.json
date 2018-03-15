@@ -19,6 +19,7 @@
     "react-native-loader": "^1.2.1",
     "react-native-progress": "^3.4.0",
     "react-native-scrollable-tab-view": "^0.8.0",
+    "react-native-snap-carousel": "^3.6.0",
     "react-native-svg": "^6.2.2",
     "react-native-swiper": "^1.5.13",
     "react-native-tab-view": "^0.0.74",

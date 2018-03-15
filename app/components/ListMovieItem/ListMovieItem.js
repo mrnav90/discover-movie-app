@@ -45,6 +45,7 @@ export default class ListMovieItem extends Component {
     let postTitle = null;
     let postDate = null;
     const Image = createImageProgress(FastImage);
+    const imagePath = this.props.backdrop_path ? this.props.backdrop_path : this.props.poster_path;
     const imageWidth = Dimensions.get('window').width - 40;
     switch (this.props.type) {
       case 'now_playing':
@@ -74,7 +75,7 @@ export default class ListMovieItem extends Component {
             indicator={Progress.Pie}
             imageStyle={{borderRadius: 10}}
             style={{width: imageWidth, height: 450}}
-            source={{uri: HOST_IMAGE + 'w300_and_h450_bestv2' + this.props.backdrop_path}}
+            source={{uri: HOST_IMAGE + 'w300_and_h450_bestv2' + imagePath}}
           />
           <BlurView style={styles.itemContent} viewRef={this.state.viewRef} blurType="dark" blurAmount={1}>
             <Text style={styles.postTitle}>{postTitle}</Text>

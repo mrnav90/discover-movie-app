@@ -117,7 +117,7 @@ export default class SearchListView extends Component {
           <View style={styles.emptyData}>
             <MaterialIcons name="movie-filter" size={150} color="#A2A2A2" />
             <Text style={{fontWeight: 'bold', fontSize: 18, color: '#414141'}}>No results found.</Text>
-            <Text style={{color: '#A2A2A2', width: 270, textAlign: 'center', marginTop: 10, fontWeight: 'bold', fontSize: 16}}>We can't find any item matching your search.</Text>
+            <Text style={{color: '#A2A2A2', width: 270, textAlign: 'center', marginTop: 10, fontWeight: 'bold', fontSize: 16}}>We can not find any item matching your search.</Text>
           </View>
         </ShowIf>
       </View>

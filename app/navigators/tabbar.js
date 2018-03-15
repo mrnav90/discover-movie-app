@@ -27,7 +27,7 @@ const AppTabbarNavigator = TabNavigator(
             iconName = 'movie';
             break;
           case 'People':
-            iconName = 'mood';
+            iconName = 'person';
             break;
           case 'TVShow':
             iconName = 'tv';
