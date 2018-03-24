@@ -51,7 +51,8 @@
     "setTimeout": false,
     "window": false,
     "XMLHttpRequest": false,
-    "pit": false
+    "pit": false,
+    "babelHelpers": true
   },
 
   "rules": {
